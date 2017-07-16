@@ -5,25 +5,29 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by yuriy on 16.07.2017.
  */
 @Getter
 @Setter
-@Entity
-@Table(name = "goods")
-public class Goods {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+public class Goods implements Serializable {
+
     int id;
-    @Column(name="name")
     String name;
-    @Column(name="price")
-    int price;
-    @Column(name="company")
+    Integer price;
     String company;
-    @Column(name="countGoods")
-    int countGoods;
+    Integer countGoods;
+    Set<Computer> computers;
+
+    public Goods(int id, String name, Integer price, String company, Integer countGoods) {
+        this.id=id;
+        this.name=name;
+        this.price=price;
+        this.company=company;
+        this.countGoods=countGoods;
+    }
 }

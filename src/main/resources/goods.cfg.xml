@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="dao.model.Goods" table="goods">
+       <id name="id" column="id">
+           <generator class="native"/>
+       </id>
+       <property name="name" column="name" type="string"/>
+       <property name="price" column="price" type="int"/>
+       <property name="company" column="company" type="string"/>
+       <property name="countGoods" column="countgoods" type="int"/>
+      <set name="computers" table="computer">
+          <key>
+              <column name="goods_id" not-null="true"></column>
+          </key>
+          <one-to-many class="dao.model.Computer"></one-to-many>
+      </set>
+   </class>
+
+
+</hibernate-mapping>
