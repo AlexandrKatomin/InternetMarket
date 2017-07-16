@@ -23,6 +23,8 @@ public class Goods implements Serializable {
     Integer countGoods;
     Set<Computer> computers;
 
+    public Goods(){}
+
     public Goods(int id, String name, Integer price, String company, Integer countGoods) {
         this.id=id;
         this.name=name;

@@ -18,4 +18,5 @@ public class Computer {
     int countCPU;
     int countRAM;
     int countMemoryHDD;
+    public Computer(){}
 }

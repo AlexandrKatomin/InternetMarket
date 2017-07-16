@@ -27,7 +27,7 @@ public class HibernateUtil implements Storage{
        final Session session=factory.openSession();
         Transaction tx=session.beginTransaction();
         try{
-            return session.createQuery("from Goods ").list();
+            return session.createQuery("from Goods").list();
         }finally {
             tx.commit();
             session.close();
