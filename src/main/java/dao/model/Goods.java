@@ -18,8 +18,12 @@ public class Goods {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
+    @Column(name="name")
     String name;
+    @Column(name="price")
     int price;
+    @Column(name="company")
     String company;
+    @Column(name="countGoods")
     int countGoods;
 }
